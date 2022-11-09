@@ -37,7 +37,7 @@ async fn main() -> Result<(), anyhow::Error> {
         Arc::new(PrescriptionService::new(services, connector.clone()));
 
     let eventbus: ChannelBus<EventEnvelope<PrescriptionAggregate>> = ChannelBus::new();
-    let receiver = eventbus.receive_events();
+    let receiver = eventbus.receive_events().await;
 
     let outbox_service: Arc<PrescriptionOutboxService> = Arc::new(PrescriptionOutboxService::new(
         connector.clone(),

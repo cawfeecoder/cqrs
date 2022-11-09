@@ -236,7 +236,7 @@ impl
         let mut plan = sqlx::query::<Sqlite>(&query);
         plan = plan.bind(event.sequence.clone());
         let mut tx = self.pool.begin().await?;
-        bus.send_event(event)?;
+        bus.send_event(event).await?;
         let result = plan.execute(&mut tx).await;
         match result {
             Err(e) => {
