@@ -4,10 +4,10 @@ use std::sync::Arc;
 use async_trait::async_trait;
 use chrono::Utc;
 
+use crate::context::common::application::ports::outbound::event_repository::EventRepository;
 use crate::context::common::domain::entity::aggregate::{self, Aggregate};
 use crate::context::common::domain::entity::event::DomainEvent;
 use crate::context::common::domain::entity::event::{AggregateSnapshot, EventEnvelope};
-use crate::context::common::domain::ports::outbound::event_repository::EventRepository;
 use crate::context::prescription::application::ports::inbound::create_prescription::CreatePrescriptionUseCase;
 use crate::context::prescription::application::ports::inbound::update_prescription::UpdatePrescriptionUseCase;
 use crate::context::prescription::application::ports::outbound::prescription::PrescriptionServices;

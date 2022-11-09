@@ -1,11 +1,11 @@
 use std::sync::Arc;
 
 use crate::context::{
-    common::domain::entity::event::EventEnvelope,
-    common::domain::{
-        entity::event::AggregateSnapshot,
-        ports::outbound::{event_bus::EventBus, event_repository::EventRepository},
+    common::application::ports::outbound::{
+        event_bus::EventBus, event_repository::EventRepository,
     },
+    common::domain::entity::event::AggregateSnapshot,
+    common::domain::entity::event::EventEnvelope,
     prescription::application::ports::inbound::{get_events::GetEvents, send_event::SendEvent},
     prescription::domain::entity::aggregate::PrescriptionAggregate,
 };

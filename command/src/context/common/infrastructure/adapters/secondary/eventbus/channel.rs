@@ -2,7 +2,7 @@ use anyhow::anyhow;
 use async_trait::async_trait;
 use crossbeam_channel::{unbounded, Receiver};
 
-use crate::context::common::domain::ports::outbound::event_bus::EventBus;
+use crate::context::common::application::ports::outbound::event_bus::EventBus;
 
 pub struct ChannelBus<T> {
     receiver: crossbeam_channel::Receiver<T>,

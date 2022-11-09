@@ -6,10 +6,8 @@ use sqlx::Sqlite;
 
 use crate::context::{
     common::{
-        domain::{
-            entity::event::{AggregateSnapshot, DomainEvent, EventEnvelope},
-            ports::outbound::{event_bus::EventBus, event_repository::EventRepository},
-        },
+        application::ports::outbound::{event_bus::EventBus, event_repository::EventRepository},
+        domain::entity::event::{AggregateSnapshot, DomainEvent, EventEnvelope},
         infrastructure::{
             adapters::secondary::storage::sqlite::SqliteConnector,
             dtos::storage::sql::{SQLAggregateSnapshot, SQLEventEnvelope},

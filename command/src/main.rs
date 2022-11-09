@@ -3,8 +3,8 @@ pub mod context;
 use std::sync::Arc;
 
 use anyhow::anyhow;
+use context::common::application::ports::outbound::event_bus::EventBus;
 use context::common::domain::entity::event::EventEnvelope;
-use context::common::domain::ports::outbound::event_bus::EventBus;
 use sqlx::{Pool, Sqlite};
 
 use crate::context::common::infrastructure::adapters::secondary::eventbus::channel::ChannelBus;
